@@ -10,11 +10,17 @@
             "nameItem": {
               "timestamp": "2016-2018",
               "nameVersions": [{
-                "timestamp": "2016-2018",
+                "timestamp": "2016-2017",
                 "data": {
                   "name": "Hieracium umbellatum"
                 }
-              }]
+              },
+                {
+                  "timestamp": "2018-2018",
+                  "data": {
+                    "name": "Hieracium umbellatum"
+                  }
+                }]
             },
             "colloquialItem": {
               "timestamp": "2016-2018",

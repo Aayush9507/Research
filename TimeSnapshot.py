@@ -74,20 +74,20 @@ def timeSnapshot(json):
 res = timeSnapshot(data)
 
 for i in range(0, len(res)):
-    # print res[i].display()
+    print res[i].display()
 
     valueList = res[i].v
 
     for j in range(0, len(valueList)):
-        # print valueList[j].display()
+        print valueList[j].display()
 
-        # print valueList[j].v
+        print valueList[j].v
 
 
         for k in range(0, len(valueList[j].v)):
 
             print type(valueList[j].v[k])
-
+    #
 
 
 
