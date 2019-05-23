@@ -58,7 +58,7 @@ def timeSnapshot(json):
 
 
 arr = timeSnapshot(data)
-print "timestamps",arr
+print "timestamps", arr
 
 def preprocess_json_array(arr):
 

@@ -1,21 +1,22 @@
 {
   "specimenItem": {
-    "timestamp": "",
-    "specimenVersions": [{
-      "timestamp": "",
+    "timestamp": " ",
+    "specimenVersions":
+    [{
+      "timestamp": " ",
       "data": {
         "specimen": {
-          "colloquialItem": "",
-          "nameItem": ""
+          "colloquialItem": " ",
+          "nameItem": " "
         }
       }
     }, {
-      "timestamp": "",
+      "timestamp": " ",
       "data": {
         "specimen": {
-          "colloquialItem": "",
-          "nameItem": "",
-          "habitatItem": ""
+          "colloquialItem": " ",
+          "nameItem": " ",
+          "habitatItem": " "
         }
       }
     }]
