@@ -2,7 +2,7 @@ import json
 jsonArray = []
 
 
-with open("tjson.json", "r") as read_file:
+with open("tjson2.json", "r") as read_file:
     data = json.load(read_file)
 
 
@@ -58,7 +58,7 @@ def timeSnapshot(json):
 
 
 arr = timeSnapshot(data)
-
+print "timestamps",arr
 
 def preprocess_json_array(arr):
 
@@ -105,24 +105,17 @@ def preprocess_json_array(arr):
 output_json_arr = preprocess_json_array(arr)
 
 
-for o in range(0, len(output_json_arr)):
-
-    json1 = output_json_arr[o]
-    break
-
-
-def checkOverlap(json1,json2):
+def checkOverlap(json1, json2):
 
     startA, endA = json1['timestamp'].split('-')
     startB, endB = json2['timestamp'].split('-')
 
-    if (startA==startB) or (startA>startB and startA<=endB):
+    if (startA == startB) or (startB < startA <= endB):
         return True
     else:
         return False
 
-
-def timeSnapshot2(json):
+def timeSnapshot2(json, json1):
 
     if type(json) == unicode:
         return json
@@ -143,19 +136,19 @@ def timeSnapshot2(json):
 
                     data = versions["data"]
                     ts = versions["timestamp"]
-                    s = timeSnapshot2(data)
+                    s = timeSnapshot2(data,json1)
             else:
 
                 if type(value) == unicode:
-                    s = timeSnapshot2(value)
+                    s = timeSnapshot2(value,json1)
 
                 elif type(value) == list:
 
-                    s = timeSnapshot2(value)
+                    s = timeSnapshot2(value,json1)
 
                     for i in range(0, len(s)):
 
-                        if s[i]['timestamp']==json1['timestamp'] or checkOverlap(json1, s[i])==True:
+                        if s[i]['timestamp'] == json1['timestamp'] or checkOverlap(json1, s[i]) is True:
 
                             for k, v in s[i].iteritems():
 
@@ -168,31 +161,21 @@ def timeSnapshot2(json):
 
                 elif type(value) == dict:
                     for k, v in value.iteritems():
-                        s = timeSnapshot2(v)
+                        s = timeSnapshot2(v,json1)
                         # print s
 
     return json1
 
 
-ss = timeSnapshot2(data)
+new = []
+
+for j in range(0, len(output_json_arr)):
+
+    ss = timeSnapshot2(data, output_json_arr[j])
+    new.append(ss)
+
+# print new
+
 
 with open('result.json', 'w') as fp:
-    json.dump(ss, fp)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    json.dump(new, fp)
