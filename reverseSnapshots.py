@@ -4,6 +4,7 @@ import collections
 with open("result.json", "r") as read_file:
     data = json.load(read_file)
 
+
 def checkOverlap(json1, json2):
 
     startA, endA = json1.split('-')
@@ -14,19 +15,20 @@ def checkOverlap(json1, json2):
     else:
         return False
 
+
 def get_keylist(array):
     # Determine numbers of versions
 
-    empty = []
+    keyarray = []
     for i in array:
-        empty.append(i['data']['specimen'].keys())
+        keyarray.append(i['data']['specimen'].keys())
 
-    for i in range(0, len(empty) - 1):
-        for j in range(i + 1, len(empty)):
-            if empty[i] == empty[j]:
-                empty.remove(empty[i])
+    for i in range(0, len(keyarray) - 1):
+        for j in range(i + 1, len(keyarray)):
+            if keyarray[i] == keyarray[j]:
+                keyarray.remove(keyarray[i])
 
-    return empty
+    return keyarray
 
 
 def create_skeleton(keylist):
@@ -92,74 +94,81 @@ def getTimestamps(data):
 
     return timearray
 
+def populate_data(myjson):
+
+    arr = myjson['specimenItem']['specimenVersions']
+
+    for i in range(0, len(timearr)):
+        for j in range(0, len(arr)):
+
+            arr[i]['timestamp'] = timearr[i]
+
+    for i in range(0, len(myjson['specimenItem']['specimenVersions'])):
+
+        for k, v in arr[i]['data']['specimen'].iteritems():
+
+            version = str(k).replace('Item', 'Versions')
+
+            arr[i]['data']['specimen'][k] = {'timestamp':'', version:[] }
+
+    for j in range(0, len(arr)):
+
+        for time in range(0, len(data)):
+
+            if checkOverlap(data[time]['timestamp'], arr[j]['timestamp']):
+
+                for k, v in data[time]['data']['specimen'].iteritems():
+
+                    for key, val in arr[j]['data']['specimen'].iteritems():
+
+                        if k+'Item' == key:
+
+                            mydict = {}
+                            t = data[time]['timestamp']
+                            mydict.update({'timestamp': t,'data':{k:v}})
+                            ver = k+'Versions'
+                            arr[j]['data']['specimen'][key][ver].append(mydict)
+
+    return myjson
+
 
 timearr = getTimestamps(data)
 keylist = get_keylist(data)
 myjson = create_skeleton(keylist)
+myjson = populate_data(myjson)
+
+
+
+ar=myjson['specimenItem']['specimenVersions']
+
+for i in range(0, len(ar)):
+    t = ar[i]['timestamp']
+    for k, v in ar[i]['data']['specimen'].iteritems():
+
+             v['timestamp'] = t
+
+
+small = []
+big = []
+
+for t in range(0, len(ar)):
+
+    mini, maxi = ar[t]['timestamp'].split('-')
+    small.append(int(mini))
+    big.append(int(maxi))
+
+t = str(min(small))+'-'+str(max(big))
+
+
+myjson['specimenItem']['timestamp']=t
+
 
 # print myjson
-# print timearr
 
 
-arr = myjson['specimenItem']['specimenVersions']
-
-for i in range(0, len(timearr)):
-    for j in range(0, len(arr)):
-
-        arr[i]['timestamp'] = timearr[i]
-
-
-for i in range(0, len(myjson['specimenItem']['specimenVersions'])):
-
-    # print arr[i]
-
-    for k, v in arr[i]['data']['specimen'].iteritems():
-
-        # print k
-
-        version = str(k).replace('Item', 'Versions')
-
-        arr[i]['data']['specimen'][k] = {'timestamp':'', version:[] }
-
-
-for j in range(0, len(arr)):
-
-    for time in range(0, len(data)):
-
-        if checkOverlap(data[time]['timestamp'], arr[j]['timestamp']):
-
-            for k, v in data[time]['data']['specimen'].iteritems():
-
-                for key, val in arr[j]['data']['specimen'].iteritems():
-
-                    if k+'Item' == key:
-
-                        mydict = {}
-
-                        t = data[time]['timestamp']
-
-                        mydict.update({'timestamp': t,'data':{k:v}})
-
-                        ver = k+'Versions'
-
-                        arr[j]['data']['specimen'][key][ver].append(mydict)
-
-
-
-with open('sample2.json', 'w') as fp:
+with open('reversedJson.json', 'w') as fp:
 
     json.dump(myjson, fp)
-
-print myjson
-
-                    # print "key...",key,'value.....',val
-
-
-
-
-
-
-
 
 
 

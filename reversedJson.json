@@ -1,21 +1,76 @@
 {
   "specimenItem": {
-    "timestamp": " ",
+    "timestamp": "2015-2018",
     "specimenVersions": [{
       "timestamp": "2015-2015",
       "data": {
         "specimen": {
-          "colloquialItem": "",
-          "nameItem": ""
+          "colloquialItem": {
+            "timestamp": "2015-2015",
+            "colloquialVersions": [{
+              "timestamp": "2015-2015",
+              "data": {
+                "colloquial": "Canadian Hawkweed"
+              }
+            }]
+          },
+          "nameItem": {
+            "timestamp": "2015-2015",
+            "nameVersions": [{
+              "timestamp": "2015-2015",
+              "data": {
+                "name": "Hieracium umbellatum"
+              }
+            }]
+          }
         }
       }
     }, {
       "timestamp": "2016-2018",
       "data": {
         "specimen": {
-          "colloquialItem": "",
-          "nameItem": "",
-          "habitatItem": ""
+          "colloquialItem": {
+            "timestamp": "2016-2018",
+            "colloquialVersions": [{
+              "timestamp": "2016-2017",
+              "data": {
+                "colloquial": "Canadian Hawkweed"
+              }
+            }, {
+              "timestamp": "2018-2018",
+              "data": {
+                "colloquial": "Canadian Hawkweed, Narrowleaf Hawkweed"
+              }
+            }]
+          },
+          "nameItem": {
+            "timestamp": "2016-2018",
+            "nameVersions": [{
+              "timestamp": "2016-2017",
+              "data": {
+                "name": "Hieracium umbellatum"
+              }
+            }, {
+              "timestamp": "2018-2018",
+              "data": {
+                "name": "Hieracium umbellatum"
+              }
+            }]
+          },
+          "habitatItem": {
+            "timestamp": "2016-2018",
+            "habitatVersions": [{
+              "timestamp": "2016-2017",
+              "data": {
+                "habitat": ["rocky shoreline", "conifer forest"]
+              }
+            }, {
+              "timestamp": "2018-2018",
+              "data": {
+                "habitat": ["rocky shoreline", "conifer forest", "sand dune"]
+              }
+            }]
+          }
         }
       }
     }]
