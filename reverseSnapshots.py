@@ -4,6 +4,15 @@ import collections
 with open("result.json", "r") as read_file:
     data = json.load(read_file)
 
+def checkOverlap(json1, json2):
+
+    startA, endA = json1.split('-')
+    startB, endB = json2.split('-')
+
+    if (startA == startB) or (startB < startA <= endB):
+        return True
+    else:
+        return False
 
 def get_keylist(array):
     # Determine numbers of versions
@@ -79,8 +88,8 @@ def getTimestamps(data):
         large.append(int(maximum))
 
     t = str(min(small))+'-'+str(max(large))
-
     timearray.append(t)
+
     return timearray
 
 
@@ -88,7 +97,83 @@ timearr = getTimestamps(data)
 keylist = get_keylist(data)
 myjson = create_skeleton(keylist)
 
+# print myjson
+# print timearr
+
+
+arr = myjson['specimenItem']['specimenVersions']
+
+for i in range(0, len(timearr)):
+    for j in range(0, len(arr)):
+
+        arr[i]['timestamp'] = timearr[i]
+
+
+for i in range(0, len(myjson['specimenItem']['specimenVersions'])):
+
+    # print arr[i]
+
+    for k, v in arr[i]['data']['specimen'].iteritems():
+
+        # print k
+
+        version = str(k).replace('Item', 'Versions')
+
+        arr[i]['data']['specimen'][k] = {'timestamp':'', version:[] }
+
+
+for j in range(0, len(arr)):
+
+    for time in range(0, len(data)):
+
+        if checkOverlap(data[time]['timestamp'], arr[j]['timestamp']):
+
+            for k, v in data[time]['data']['specimen'].iteritems():
+
+                for key, val in arr[j]['data']['specimen'].iteritems():
+
+                    if k+'Item' == key:
+
+                        mydict = {}
+
+                        t = data[time]['timestamp']
+
+                        mydict.update({'timestamp': t,'data':{k:v}})
+
+                        ver = k+'Versions'
+
+                        arr[j]['data']['specimen'][key][ver].append(mydict)
+
+
+
+with open('sample2.json', 'w') as fp:
+
+    json.dump(myjson, fp)
+
 print myjson
-print timearr
+
+                    # print "key...",key,'value.....',val
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
