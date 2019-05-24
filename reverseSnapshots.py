@@ -132,38 +132,32 @@ def populate_data(myjson):
     return myjson
 
 
+def fix_timestamps(myjson):
+    ar = myjson['specimenItem']['specimenVersions']
+    for i in range(0, len(ar)):
+        t = ar[i]['timestamp']
+        for k, v in ar[i]['data']['specimen'].iteritems():
+
+            v['timestamp'] = t
+    small = []
+    big = []
+    for t in range(0, len(ar)):
+
+        mini, maxi = ar[t]['timestamp'].split('-')
+        small.append(int(mini))
+        big.append(int(maxi))
+
+    t = str(min(small))+'-'+str(max(big))
+    myjson['specimenItem']['timestamp']=t
+
+    return myjson
+
+
 timearr = getTimestamps(data)
 keylist = get_keylist(data)
 myjson = create_skeleton(keylist)
 myjson = populate_data(myjson)
-
-
-
-ar=myjson['specimenItem']['specimenVersions']
-
-for i in range(0, len(ar)):
-    t = ar[i]['timestamp']
-    for k, v in ar[i]['data']['specimen'].iteritems():
-
-             v['timestamp'] = t
-
-
-small = []
-big = []
-
-for t in range(0, len(ar)):
-
-    mini, maxi = ar[t]['timestamp'].split('-')
-    small.append(int(mini))
-    big.append(int(maxi))
-
-t = str(min(small))+'-'+str(max(big))
-
-
-myjson['specimenItem']['timestamp']=t
-
-
-# print myjson
+myjson = fix_timestamps(myjson)
 
 
 with open('reversedJson.json', 'w') as fp:
