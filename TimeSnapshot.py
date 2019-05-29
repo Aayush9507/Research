@@ -69,8 +69,6 @@ def timeSnapshot(json):
     return result
 
 
-
-
 res = timeSnapshot(data)
 
 for i in range(0, len(res)):
@@ -82,7 +80,6 @@ for i in range(0, len(res)):
         print valueList[j].display()
 
         print valueList[j].v
-
 
         for k in range(0, len(valueList[j].v)):
 

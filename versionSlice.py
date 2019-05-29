@@ -12,7 +12,7 @@ def versionslice(json, version):
     return arr[version]
 
 
-vslice = versionslice(data, 1)
+vslice = versionslice(data, 0)
 timestamp = vslice['timestamp']
 mydict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
 
