@@ -1,6 +1,6 @@
 import json
 
-with open("tjson2.json", "r") as read_file:
+with open("jsons/tjson2.json", "r") as read_file:
     data = json.load(read_file)
 
 mydict = {}

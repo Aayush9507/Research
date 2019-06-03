@@ -1,7 +1,7 @@
 import json
 import collections
 
-with open("result.json", "r") as read_file:
+with open("jsons/result.json", "r") as read_file:
     data = json.load(read_file)
 
 

@@ -1,7 +1,10 @@
 import json
+jsonArray = []
+with open("jsons/tjson2.json", "r") as read_file:
+    data = json.load(read_file)
 
 
-def timeSnapshot(json, itemname):
+def versionSnapshot(json, itemname, v):
 
     if type(json) == unicode:
         return json
@@ -18,20 +21,18 @@ def timeSnapshot(json, itemname):
                 name = key.replace('Item', '')
                 version = name+"Versions"
                 timestamp = value["timestamp"]
+                data = value[version][v]["data"]
+                ts = value[version][v]["timestamp"]
+                s = versionSnapshot(data, itemname, v)
 
-                for versions in value[version]:
-
-                    data = versions["data"]
-                    ts = versions["timestamp"]
-                    s = timeSnapshot(data,itemname)
             else:
 
                 if type(value) == unicode:
-                    s = timeSnapshot(value,itemname)
+                    s = versionSnapshot(value, itemname, v)
 
                 elif type(value) == list:
 
-                    s = timeSnapshot(value,itemname)
+                    s = versionSnapshot(value, itemname, v)
 
                     for i in range(0, len(s)):
 
@@ -46,10 +47,9 @@ def timeSnapshot(json, itemname):
 
                 elif type(value) == dict:
                     for k, v in value.iteritems():
-                        s = timeSnapshot(v, itemname)
+                        s = versionSnapshot(v, itemname, v)
 
     return jsonArray
-
 
 def preprocess_json_array(arr,itemname):
 
@@ -92,7 +92,6 @@ def preprocess_json_array(arr,itemname):
 
     return json_array
 
-
 def checkOverlap(json1, json2):
 
     startA, endA = json1['timestamp'].split('-')
@@ -103,7 +102,7 @@ def checkOverlap(json1, json2):
     else:
         return False
 
-def timeSnapshot2(json, json1, itemname):
+def versionSnapshot2(json, json1, itemname):
 
     if type(json) == unicode:
         return json
@@ -124,15 +123,15 @@ def timeSnapshot2(json, json1, itemname):
 
                     data = versions["data"]
                     ts = versions["timestamp"]
-                    s = timeSnapshot2(data,json1,itemname)
+                    s = versionSnapshot2(data,json1,itemname)
             else:
 
                 if type(value) == unicode:
-                    s = timeSnapshot2(value,json1,itemname)
+                    s = versionSnapshot2(value,json1,itemname)
 
                 elif type(value) == list:
 
-                    s = timeSnapshot2(value,json1,itemname)
+                    s = versionSnapshot2(value,json1,itemname)
 
                     for i in range(0, len(s)):
 
@@ -147,30 +146,20 @@ def timeSnapshot2(json, json1, itemname):
 
                 elif type(value) == dict:
                     for k, v in value.iteritems():
-                        s = timeSnapshot2(v, json1, itemname)
-                        # print s
+                        s = versionSnapshot2(v, json1, itemname)
 
     return json1
 
-
 if __name__ == '__main__':
 
-    jsonArray = []
-    itemname = 'specimen'
-
-    with open("tjson2.json", "r") as read_file:
-        data = json.load(read_file)
-
     new = []
-    arr = timeSnapshot(data, itemname)
-    print "timestamps", arr
-    # output_json_arr = preprocess_json_array(arr, itemname)
-    # for j in range(0, len(output_json_arr)):
-    #
-    #     ss = timeSnapshot2(data, output_json_arr[j], itemname)
-    #     new.append(ss)
+    itemname = 'specimen'
+    arr = versionSnapshot(data, itemname, 1)
+    output_json_arr = preprocess_json_array(arr, itemname)
+    for j in range(0, len(output_json_arr)):
 
+        ss = versionSnapshot2(data, output_json_arr[j], itemname)
+        new.append(ss)
 
-# print new
-# with open('result.json', 'w') as fp:
-#     json.dump(new, fp)
+    with open('versionSnap.json', 'w') as fp:
+        json.dump(new, fp)
