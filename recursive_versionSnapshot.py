@@ -1,6 +1,6 @@
 import json
 jsonArray = []
-with open("jsons/tjson2.json", "r") as read_file:
+with open("jsons/recur_json.json", "r") as read_file:
     data = json.load(read_file)
 
 
@@ -17,17 +17,17 @@ def versionSnapshot(json, itemname, v):
 
         for key, value in json.iteritems():
 
-            # print key, value
+            print key, value
 
             if "Item" in key:
 
                 name = key.replace('Item', '')
 
                 version = name+"Versions"
-                timestamp = value["timestamp"]
+                # timestamp = value["timestamp"]
                 data = value[version][v]["data"]
-                ts = value[version][v]["timestamp"]
-                s = versionSnapshot(data, itemname, v)
+                # ts = value[version][v]["timestamp"]
+                # s = versionSnapshot(data, itemname, v)
 
             else:
 
@@ -109,12 +109,10 @@ def checkOverlap(json1, json2):
     else:
         return False
 
-
 def give_recursive_items2(arr, d, i, t):
 
     item = arr[i]
     for key, value in d.iteritems():
-        # print key,value
 
         if "Item" in key:
             # print k1
@@ -125,16 +123,9 @@ def give_recursive_items2(arr, d, i, t):
                 for versions in value[version]:
 
                     for k, v in versions.iteritems():
-                        # print k, v
-                        # print t, v
-                        if k == 'timestamp' and checkOverlap(t, str(v)) == True:
+                        if k == 'timestamp' and v == t:
                             if i+1 == len(arr):
-                                dict1 = {key:''}
-
-                                dict1[key]=value
-                                return dict1
-
-
+                                return versions['data'][item]
                             else:
                                 return give_recursive_items2(arr, versions['data'][item], i+1, t)
 
@@ -194,21 +185,26 @@ if __name__ == '__main__':
     new = []
     itemname = 'specimen'
 
-    """input"""
     items = ['specimen', 'name']
-    t = '2016-2018'
 
-    arr = versionSnapshot(data, items[-1], 0)
-
-    output_json_arr = preprocess_json_array(arr, items[-1])
-
-    newdata = give_recursive_items2(items, data, 0, t)
+    arr = ['specimen', 'name']
+    t = '2015-2015'
 
 
-    for j in range(0, len(output_json_arr)):
+    print versionSnapshot(arr,data,0,t)
 
-        ss = versionSnapshot2(newdata, output_json_arr[j], itemname)
-        new.append(ss)
+    # arr = versionSnapshot(data, itemname, 0)
+    #
+    # print arr
+    #
+    # output_json_arr = preprocess_json_array(arr, itemname)
+    #
+    # print output_json_arr
+    #
+    # for j in range(0, len(output_json_arr)):
+    #
+    #     ss = versionSnapshot2(data, output_json_arr[j], itemname)
+    #     new.append(ss)
 
     # print new
 

@@ -2,6 +2,7 @@
   "specimenItem": {
     "timestamp": "2015-2018",
     "specimenVersions": [
+
       {
         "timestamp": "2015-2015",
         "data": {
@@ -32,14 +33,11 @@
                 "data": {
                   "colloquial": "Canadian Hawkweed"
                 }
-              }
-              ]
+              }]
             }
           }
         }
-      },
-
-      {
+      },{
         "timestamp": "2016-2018",
         "data": {
           "specimen": {
@@ -48,17 +46,7 @@
               "nameVersions": [{
                 "timestamp": "2016-2018",
                 "data": {
-                  "name": {
-                    "subnameItem": {
-                      "timestamp": "2016-2018",
-                      "subnameVersions": [{
-                        "timestamp": "2016-2018",
-                        "data": {
-                          "subname": "Aayush"
-                        }
-                      }]
-                    }
-                  }
+                  "name": "Hieracium umbellatum"
                 }
               }]
             },
@@ -99,4 +87,5 @@
       }
     ]
   }
+
 }

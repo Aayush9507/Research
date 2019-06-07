@@ -1,0 +1,23 @@
+[{
+  "timestamp": "2016-2017",
+  "data": {
+    "specimen": {
+      "colloquial": "Canadian Hawkweed",
+      "name": {
+        "subname": "Aayush"
+      },
+      "habitat": ["rocky shoreline", "conifer forest"]
+    }
+  }
+}, {
+  "timestamp": "2018-2018",
+  "data": {
+    "specimen": {
+      "colloquial": "Canadian Hawkweed, Narrowleaf Hawkweed",
+      "name": {
+        "subname": "Aayush"
+      },
+      "habitat": ["rocky shoreline", "conifer forest", "sand dune"]
+    }
+  }
+}]
