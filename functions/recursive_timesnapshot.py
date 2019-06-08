@@ -114,7 +114,7 @@ def checkOverlap2(json1, json2):
     startA, endA = json1.split('-')
     startB, endB = json2.split('-')
 
-    if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA==endB):
+    if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA==endB) or endB<endA and startB>startA:
         print "hua"
         return True
     else:
@@ -259,7 +259,7 @@ if __name__ == '__main__':
 
     """input"""
     items = ['specimen', 'colloquial']
-    input_t = '2016-2017'
+    input_t = '2015-2015'
     newdata = give_recursive_items2(items, data, 0, input_t)
 
     new = []
@@ -268,7 +268,7 @@ if __name__ == '__main__':
     # print "timestamps", arr
 
     output_json_arr = preprocess_json_array(arr, itemname, input_t)
-    # print "skeleton", output_json_arr
+    print "skeleton", output_json_arr
 
     for j in range(0, len(output_json_arr)):
 
