@@ -7,15 +7,15 @@
         "data": {
           "specimen": {
             "nameItem": {
-              "timestamp": "2015-2015",
+              "timestamp": "2015-2018",
               "nameVersions": [{
-                "timestamp": "2015-2015",
+                "timestamp": "2015-2018",
                 "data": {
                   "name": {
                     "subnameItem": {
-                      "timestamp": "2015-2015",
+                      "timestamp": "2015-2018",
                       "subnameVersions": [{
-                        "timestamp": "2015-2015",
+                        "timestamp": "2015-2018",
                         "data": {
                           "subname": "Aayush"
                         }
@@ -44,15 +44,15 @@
         "data": {
           "specimen": {
             "nameItem": {
-              "timestamp": "2016-2018",
+              "timestamp": "2015-2018",
               "nameVersions": [{
-                "timestamp": "2016-2018",
+                "timestamp": "2015-2018",
                 "data": {
                   "name": {
                     "subnameItem": {
-                      "timestamp": "2016-2018",
+                      "timestamp": "2015-2018",
                       "subnameVersions": [{
-                        "timestamp": "2016-2018",
+                        "timestamp": "2015-2018",
                         "data": {
                           "subname": "Aayush"
                         }

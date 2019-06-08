@@ -1,7 +1,7 @@
 import json
 import collections
 
-with open("jsons/result.json", "r") as read_file:
+with open("/Users/mymac/Documents/GitHub/Research/jsons/tjson2.json", "r") as read_file:
     data = json.load(read_file)
 
 
@@ -94,6 +94,7 @@ def getTimestamps(data):
 
     return timearray
 
+
 def populate_data(myjson):
 
     arr = myjson['specimenItem']['specimenVersions']
@@ -160,7 +161,9 @@ myjson = populate_data(myjson)
 myjson = fix_timestamps(myjson)
 
 
-with open('reversedJson.json', 'w') as fp:
+print myjson
+
+with open('reversedJson2.json', 'w') as fp:
 
     json.dump(myjson, fp)
 
