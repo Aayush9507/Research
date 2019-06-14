@@ -1,7 +1,7 @@
 import json
 import collections
 
-with open("/Users/mymac/Documents/GitHub/Research/jsons/tjson2.json", "r") as read_file:
+with open('/Users/mymac/Documents/GitHub/Research/functions/specimen.json', "r") as read_file:
     data = json.load(read_file)
 
 
@@ -112,6 +112,7 @@ def populate_data(myjson):
 
             arr[i]['data']['specimen'][k] = {'timestamp':'', version:[] }
 
+
     for j in range(0, len(arr)):
 
         for time in range(0, len(data)):
@@ -125,10 +126,17 @@ def populate_data(myjson):
                         if k+'Item' == key:
 
                             mydict = {}
+
                             t = data[time]['timestamp']
-                            mydict.update({'timestamp': t,'data':{k:v}})
+
+                            mydict.update({'timestamp': t, 'data': {k : v}})
+                            # print mydict, t
                             ver = k+'Versions'
+
                             arr[j]['data']['specimen'][key][ver].append(mydict)
+
+                            # print "here......", arr[j]['data']['specimen'][key][ver]
+
 
     return myjson
 
@@ -155,17 +163,23 @@ def fix_timestamps(myjson):
 
 
 timearr = getTimestamps(data)
+
 keylist = get_keylist(data)
 myjson = create_skeleton(keylist)
+
+# print myjson
+
 myjson = populate_data(myjson)
+
+# print myjson
 myjson = fix_timestamps(myjson)
 
 
-print myjson
+# print myjson
 
-with open('reversedJson2.json', 'w') as fp:
-
-    json.dump(myjson, fp)
+# with open('reversedJson2.json', 'w') as fp:
+#
+#     json.dump(myjson, fp)
 
 
 

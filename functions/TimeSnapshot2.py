@@ -217,26 +217,26 @@ if __name__ == '__main__':
 
     new = []
     arr = timeSnapshot(data, itemname)
-    # print "timestamps", arr
-
+    print "timestamps", arr
+#
     output_json_arr = preprocess_json_array(arr, itemname)
-
-    # print output_json_arr
-
-    """input"""
-    items = ['specimen']
-    t = '2016-2018'
-
-    newdata = give_recursive_items2(items, data, 0, t)
-
-    for j in range(0, len(output_json_arr)):
-
-        ss = timeSnapshot2(newdata, output_json_arr[j], itemname)
-
-        new.append(ss)
-
-    print new
-
-
-with open('result.json', 'w') as fp:
-    json.dump(new, fp)
+#
+    print output_json_arr
+#
+#     """input"""
+#     items = ['specimen']
+#     t = '2015-2018'
+#
+#     newdata = give_recursive_items2(items, data, 0, t)
+#
+#     for j in range(0, len(output_json_arr)):
+#
+#         ss = timeSnapshot2(newdata, output_json_arr[j], itemname)
+#
+#         new.append(ss)
+#
+#     print new
+#
+#
+# with open('result.json', 'w') as fp:
+#     json.dump(new, fp)

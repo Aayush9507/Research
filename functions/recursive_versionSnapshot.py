@@ -30,13 +30,11 @@ def timeSnapshot(json, itemname):
                     data = versions["data"]
                     ts = versions["timestamp"]
 
-                    # print versions
-                    print data
                     s = timeSnapshot(data, itemname)
                     # print "ts....", ts
                     # print versions
                     # print "here"
-                    newjson={}
+                    newjson = {}
                     newjson.update({"data": {itemname: {}}})
                     newjson.update({"timestamp": ts})
                     jsonArray.append(newjson)
@@ -88,6 +86,8 @@ def preprocess_json_array(arr, itemname, input_t):
 
         endArr.append(end)
 
+    # print "start",startArr
+    # print "end",endArr
     newArr = []
 
     smallest_start = min(startArr)
@@ -97,10 +97,13 @@ def preprocess_json_array(arr, itemname, input_t):
 
         smallest_end = min(endArr)
         endArr.remove(smallest_end)
-        newArr.append(str(smallest_start) + '-' + smallest_end)
-        smallest_start = int(smallest_end) + 1
 
-    # print "new arr",newArr
+        if int(smallest_start) <= int(smallest_end):
+
+            newArr.append(str(smallest_start) + '-' + str(smallest_end))
+            smallest_start = int(smallest_end) + 1
+
+    # print "new arr", newArr
     json_array = []
 
     for t in range(0, len(newArr)):
@@ -135,36 +138,6 @@ def checkOverlap(json1, json2):
         return True
     else:
         return False
-
-
-def give_recursive_items2(arr, d, i, t):
-
-    item = arr[i]
-    for key, value in d.iteritems():
-
-        if "Item" in key:
-            name = key.replace('Item', '')
-            version = name+"Versions"
-
-            if name == item:
-
-                for versions in value[version]:
-
-                    # print versions
-
-                    for k, v in versions.iteritems():
-
-                        if k == 'timestamp' and checkOverlap2(t, str(v)) == True:
-
-                            if i+1 == len(arr):
-
-                                dict1 = {key:''}
-                                dict1[key] = value
-                                return dict1
-
-                            else:
-
-                                return give_recursive_items2(arr, versions['data'][item], i+1, t)
 
 
 def utility(dict):
@@ -209,7 +182,7 @@ def timeSnapshot2(parent, json1, itemname):
             else:
 
                 if type(value) == unicode and key == itemname:
-                     if checkOverlap2(json1['timestamp'], ts) or json1['timestamp'] == ts:
+                    if checkOverlap2(json1['timestamp'], ts) or json1['timestamp'] == ts:
 
                         json1["data"].update({key: value})
 
@@ -250,42 +223,82 @@ def timeSnapshot2(parent, json1, itemname):
     return json1
 
 
+def give_recursive_items2(arr, d, i):
+
+    item = arr[i]
+    for key, value in d.iteritems():
+
+        if "Item" in key:
+
+            name = key.replace('Item', '')
+            version = name+"Versions"
+
+            if name == item:
+
+                for versions in range(0, len(value[version])):
+
+                    # print "here....", (value[version][versions])
+
+                    for k, v in value[version][versions].iteritems():
+
+                        if k == 'timestamp':
+
+                            if i+1 == len(arr):
+
+                                dict1 = {key: value}
+                                arrr.append(dict1)
+                                # print "here...", dict1
+
+                            else:
+
+                                give_recursive_items2(arr, value[version][versions]['data'][item], i+1)
+    return arrr
+
+
 if __name__ == '__main__':
 
     jsonArray = []
 
-    itemname = 'colloquial'
+    itemname = 'subname'
 
-    with open('/Users/mymac/Documents/GitHub/Research/jsons/tjson2.json', "r") as read_file:
+    with open('/Users/mymac/Documents/GitHub/Research/jsons/tjson2.json', 'r') as read_file:
         data = json.load(read_file)
 
     """input"""
-    items = ['specimen','colloquial']
-    input_t = '2016-2018'
+    items = ['specimen', 'name', 'subname']
+    input_t = '2015-2018'
 
     arrr = []
-    newdata = give_recursive_items2(items, data, 0, input_t)
 
-    print "newdata ==", newdata
+    newdata = give_recursive_items2(items, data, 0)
 
-    new = []
-    arr = timeSnapshot(newdata, itemname)
+    # print "newdata ==", newdata
+    # print len(newdata)
 
-    print "timestamps", arr
+    for i in range(0, len(newdata)):
+        arr = timeSnapshot(newdata[i], itemname)
+
+    # print arr
 
     output_json_arr = preprocess_json_array(arr, itemname, input_t)
-
+    #
+    # print "timestamps", arr
+    #
     print "skeleton", output_json_arr
-    #
-    # for j in range(0, len(output_json_arr)):
-    #
-    #     if checkOverlap2(output_json_arr[j]['timestamp'], input_t):
-    #
-    #         ss = timeSnapshot2(newdata, output_json_arr[j], itemname)
-    #         new.append(ss)
-    #
-    # print "--------------------Snapshot ------------------------"
-    # print new
-    #
-    # with open('specimen.json', 'w') as fp:
-    #     json.dump(new, fp)
+
+    new = []
+
+    for j in range(0, len(output_json_arr)):
+        for i in range(0, len(newdata)):
+
+            # if checkOverlap2(output_json_arr[j]['timestamp'], input_t):
+
+            ss = timeSnapshot2(newdata[i], output_json_arr[j], itemname)
+
+        new.append(ss)
+
+    print "--------------------Snapshot ------------------------"
+    print new
+
+    with open('test5.json', 'w') as fp:
+        json.dump(new, fp)
