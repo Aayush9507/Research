@@ -272,33 +272,33 @@ if __name__ == '__main__':
 
     newdata = give_recursive_items2(items, data, 0)
 
-    # print "newdata ==", newdata
+    print "newdata ==", newdata
     # print len(newdata)
 
-    for i in range(0, len(newdata)):
-        arr = timeSnapshot(newdata[i], itemname)
-
-    # print arr
-
-    output_json_arr = preprocess_json_array(arr, itemname, input_t)
+    # for i in range(0, len(newdata)):
+    #     arr = timeSnapshot(newdata[i], itemname)
     #
-    # print "timestamps", arr
+    # # print arr
     #
-    print "skeleton", output_json_arr
+    # output_json_arr = preprocess_json_array(arr, itemname, input_t)
+    # #
+    # # print "timestamps", arr
+    # #
+    # print "skeleton", output_json_arr
+    #
+    # new = []
+    #
+    # for j in range(0, len(output_json_arr)):
+    #     for i in range(0, len(newdata)):
+    #
+    #         # if checkOverlap2(output_json_arr[j]['timestamp'], input_t):
+    #
+    #         ss = timeSnapshot2(newdata[i], output_json_arr[j], itemname)
+    #
+    #     new.append(ss)
+    #
+    # print "--------------------Snapshot ------------------------"
+    # print new
 
-    new = []
-
-    for j in range(0, len(output_json_arr)):
-        for i in range(0, len(newdata)):
-
-            # if checkOverlap2(output_json_arr[j]['timestamp'], input_t):
-
-            ss = timeSnapshot2(newdata[i], output_json_arr[j], itemname)
-
-        new.append(ss)
-
-    print "--------------------Snapshot ------------------------"
-    print new
-
-    with open('test5.json', 'w') as fp:
-        json.dump(new, fp)
+    # with open('test5.json', 'w') as fp:
+    #     json.dump(new, fp)
