@@ -11,7 +11,7 @@ def checkOverlap2(json1, json2):
     startA, endA = json1.split('-')
     startB, endB = json2.split('-')
 
-    if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA==endB) or endB<endA and startB>startA:
+    if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA == endB) or endB<endA and startB > startA:
         return True
     else:
 
@@ -55,6 +55,8 @@ timestamp = "2015-2015"
 
 slices = timeslice(items, data, timestamp, 0)
 
+
+# print slices
 
 item = items[-1]+'Item'
 version = items[-1]+'Versions'
