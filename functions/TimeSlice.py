@@ -49,56 +49,57 @@ def timeslice(arr, d, timestamp, i):
 
 if __name__ == '__main__':
 
-    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_child_change_folder_small'
-    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/child_change_folder_Time_slice_small'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder_large'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Time_slice_large'
 
     fields = ['time', 'versions']
-    csv_name = "Timeslice_childchange_time_log_small.csv"
+    csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/Timeslice_time_log_large.csv"
     rows = []
 
-    for file_names in os.listdir(path):
+    for file_names in sorted(os.listdir(path)):
 
-        original_timestamp = ''
-        tslice = ''
+        if not file_names.startswith('.'):
+            original_timestamp = ''
+            tslice = ''
 
-        full_filename = "%s/%s" % (path, file_names)
-        with open(full_filename, "r") as read_file:
-            data = json.load(read_file)
+            full_filename = "%s/%s" % (path, file_names)
+            with open(full_filename, "r") as read_file:
+                data = json.load(read_file)
 
-            for file in data:
-                start = time.time()
+                for file in data:
+                    start = time.time()
 
-                items = ['specimen']
-                arrr = []
-                timestamp = '1299-1299'
+                    items = ['specimen']
+                    arrr = []
+                    timestamp = '1299-1299'
 
-                slices = timeslice(items, data, timestamp, 0)
+                    slices = timeslice(items, data, timestamp, 0)
 
-                item = items[-1]+'Item'
-                version = items[-1]+'Versions'
+                    item = items[-1]+'Item'
+                    version = items[-1]+'Versions'
 
-                for i in range(0, len(slices)):
-                    for j in slices[i][item][version]:
-                        if j['timestamp']!='' and timestamp!='':
-                            if checkOverlap2(j['timestamp'], timestamp):
-                                tslice = j
-                                original_timestamp = j['timestamp']
+                    for i in range(0, len(slices)):
+                        for j in slices[i][item][version]:
+                            if j['timestamp']!='' and timestamp!='':
+                                if checkOverlap2(j['timestamp'], timestamp):
+                                    tslice = j
+                                    original_timestamp = j['timestamp']
 
-                mydict.update({item: {"timestamp": original_timestamp, version: [tslice]}})
+                    mydict.update({item: {"timestamp": original_timestamp, version: [tslice]}})
 
-                print mydict
+                    # print mydict
 
-                with open(save_path+'/'+file_names, 'w') as fp:
-                    json.dump(mydict, fp)
+                    with open(save_path+'/'+file_names, 'w') as fp:
+                        json.dump(mydict, fp)
 
-                end = time.time()
-                diff = end-start
-                print file_names
-                print(end - start)
+                    end = time.time()
+                    diff = end-start
+                    print file_names
+                    print(end - start)
 
-                versions = file_names.replace(".json", "")
+                    versions = file_names.replace(".json", "")
 
-                rows.append([diff, versions])
+                    rows.append([diff, versions])
 
     with open(csv_name, 'w') as csvfile:
 

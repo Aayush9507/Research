@@ -43,68 +43,69 @@ def versionslice(arr, d, i):
 
 if __name__ == '__main__':
 
-    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_parent_change_folder'
-    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change_folder_Version_slice_small'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder_large'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Version_slice_large'
 
     fields = ['time', 'versions']
-    csv_name = "Versionslice_time_log_small.csv"
+    csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/Versionslice_time_log_large.csv"
     rows = []
 
     for file_names in sorted(os.listdir(path)):
 
-        original_timestamp = ''
-        tslice = ''
+        if not file_names.startswith('.'):
+            original_timestamp = ''
+            tslice = ''
 
-        full_filename = "%s/%s" % (path, file_names)
-        with open(full_filename, "r") as read_file:
-            data = json.load(read_file)
+            full_filename = "%s/%s" % (path, file_names)
+            with open(full_filename, "r") as read_file:
+                data = json.load(read_file)
 
-            for file in data:
-                start = time.time()
+                for file in data:
+                    start = time.time()
 
-                items = ['specimen']
-                ver = 1
+                    items = ['specimen']
+                    ver = 1
 
-                item = items[-1]+'Item'
-                version = items[-1]+'Versions'
+                    item = items[-1]+'Item'
+                    version = items[-1]+'Versions'
 
-                arrr = []
-                versionArray = []
-                flags = {}
-                flags2 = {}
+                    arrr = []
+                    versionArray = []
+                    flags = {}
+                    flags2 = {}
 
-                slices = versionslice(items, data, 0)
+                    slices = versionslice(items, data, 0)
 
-                for dict in slices:
-                    for arrays in dict[item][version]:
-                        # print arrays
-                        t = arrays['timestamp']
-                        if t not in flags2 or flags2[t] == 'False':
+                    for dict in slices:
+                        for arrays in dict[item][version]:
+                            # print arrays
+                            t = arrays['timestamp']
+                            if t not in flags2 or flags2[t] == 'False':
 
-                            versionArray.append(arrays)
-                            flags2[t] = 'True'
+                                versionArray.append(arrays)
+                                flags2[t] = 'True'
 
-                slicedict = {}
+                    slicedict = {}
 
-                timestamp = versionArray[0]['timestamp']
-                vslice = versionArray[-1]
+                    timestamp = versionArray[0]['timestamp']
+                    vslice = versionArray[-1]
 
-                slicedict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
+                    slicedict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
 
-                # print slicedict
+                    # print slicedict
 
-                with open(save_path+'/'+file_names, 'w') as fp:
-                    json.dump(mydict, fp)
+                    with open(save_path+'/'+file_names, 'w') as fp:
+                        json.dump(mydict, fp)
 
-                end = time.time()
-                diff = end-start
-                print file_names
-                print(end - start)
-                print "----------------------------------------------------------------------------------------"
+                    end = time.time()
+                    diff = end-start
+                    print file_names
+                    print(end - start)
+                    print "----------------------------------------------------------------------------------------"
 
-                versions = file_names.replace(".json", "")
+                    versions = file_names.replace(".json", "")
 
-                rows.append([diff, versions])
+                    rows.append([diff, versions])
 
     with open(csv_name, 'w') as csvfile:
 

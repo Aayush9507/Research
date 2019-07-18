@@ -268,12 +268,12 @@ if __name__ == '__main__':
 
         jsonArray = []
 
-        itemname = 'name'
+        itemname = 'specimen'
 
         """input"""
-        items = ['specimen', 'name']
+        items = ['specimen']
         input_t = '1000-9000'
-        input_version = 0
+        input_version = 1
 
         arrr = []
 
@@ -289,7 +289,7 @@ if __name__ == '__main__':
 
         new = {}
 
-        count = 0
+        count = 1
         # for j in output_json_arr:
         #     for i in range(0, len(newdata)):
         #         ss = populate_data(newdata[i], j, itemname)
