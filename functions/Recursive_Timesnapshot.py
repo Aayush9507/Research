@@ -147,7 +147,7 @@ def give_recursive_items2(arr, d, i, t):
 
                     for k, v in versions.iteritems():
 
-                            if k == 'timestamp' and t!='' and v!='' and checkOverlap2(t, unicode(v)) == True:
+                            if k == 'timestamp' and t!='' and v!='' and checkOverlap2(t, unicode(v)):
 
                                 if i+1 == len(arr):
 
@@ -287,33 +287,33 @@ if __name__ == '__main__':
 
                 output_json_arr = preprocess_json_array(arr, itemname, input_t)
 
-                # print output_json_arr
-
-                for j in range(0, len(output_json_arr)):
-
-                    if checkOverlap2(output_json_arr[j]['timestamp'], input_t):
-
-                        ss = timeSnapshot2(newdata, output_json_arr[j], itemname)
-                        new.append(ss)
-
-                print "--------------------Snapshot ------------------------"
-                print new
-
-                with open(save_path+'/'+file_names, 'w') as fp:
-                    json.dump(new, fp)
-
-                end = time.time()
-
-                print file_names
-                print(end - start)
-
-                diff = end-start
-                versions = file_names.replace(".json", "")
-
-                rows.append([diff, versions])
-
-    with open(csv_name, 'w') as csvfile:
-
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(fields)
-        csvwriter.writerows(rows)
+                print output_json_arr
+    #
+    #             for j in range(0, len(output_json_arr)):
+    #
+    #                 if checkOverlap2(output_json_arr[j]['timestamp'], input_t):
+    #
+    #                     ss = timeSnapshot2(newdata, output_json_arr[j], itemname)
+    #                     new.append(ss)
+    #
+    #             print "--------------------Snapshot ------------------------"
+    #             print new
+    #
+    #             with open(save_path+'/'+file_names, 'w') as fp:
+    #                 json.dump(new, fp)
+    #
+    #             end = time.time()
+    #
+    #             print file_names
+    #             print(end - start)
+    #
+    #             diff = end-start
+    #             versions = file_names.replace(".json", "")
+    #
+    #             rows.append([diff, versions])
+    #
+    # with open(csv_name, 'w') as csvfile:
+    #
+    #     csvwriter = csv.writer(csvfile)
+    #     csvwriter.writerow(fields)
+    #     csvwriter.writerows(rows)

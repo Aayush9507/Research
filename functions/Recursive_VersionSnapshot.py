@@ -2,7 +2,7 @@ import csv
 import json
 import os
 import time
-
+import simplejson
 
 def getTimestamps(json, itemname):
 
@@ -64,7 +64,7 @@ def getTimestamps(json, itemname):
     return jsonArray
 
 
-def preprocess_json_array(arr, itemname, input_t):
+def preprocess_json_array(arr, itemname):
 
     res_list = []
     for i in range(len(arr)):
@@ -102,7 +102,7 @@ def preprocess_json_array(arr, itemname, input_t):
 
     for t in range(0, len(newArr)):
         # print newArr[t], input_t
-        if checkOverlap2(newArr[t], input_t):
+
             final_json = {}
             final_json.update({"data": {itemname: {}}})
             final_json.update({"timestamp": newArr[t]})
@@ -247,71 +247,78 @@ def give_recursive_items2(arr, d, i):
 
 if __name__ == '__main__':
 
-    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_parent_change_folder_medium'
-    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change_folder_Version_snapshots_medium'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder_large'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Version_snapshots_large'
 
     # with open('/Users/mymac/Documents/GitHub/Research/Experiments/reversed_parent_change_folder/100.json', "r") as read_file:
     #     data = json.load(read_file)
 
     fields = ['time', 'versions']
-    csv_name = "VersionSnapshot_time_log_medium.csv"
+    csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/VersionSnapshot_time_log_large.csv"
     rows = []
 
-    for file_names in os.listdir(path):
+    for file_names in sorted(os.listdir(path)):
 
-        full_filename = "%s/%s" % (path, file_names)
-        with open(full_filename, "r") as read_file:
-            data = json.load(read_file)
+        if not file_names.startswith('.'):
+            full_filename = "%s/%s" % (path, file_names)
             print full_filename
-            for file in data:
-                start = time.time()
+            with open(full_filename, "r") as read_file:
+                data = json.load(read_file)
 
-                jsonArray = []
+                for file in data:
+                    start = time.time()
 
-                itemname = 'specimen'
+                    jsonArray = []
 
-                """input"""
-                items = ['specimen']
-                input_t = '1000-9000'
-                input_version = 82
+                    itemname = 'specimen'
 
-                arrr = []
+                    """input"""
+                    items = ['specimen']
+                    input_version = 82
 
-                newdata = give_recursive_items2(items, data, 0)
+                    arrr = []
 
-                for i in range(0, len(newdata)):
-                    arr = getTimestamps(newdata[i], itemname)
+                    newdata = give_recursive_items2(items, data, 0)
 
-                print len(arr)
-                output_json_arr = preprocess_json_array(arr, itemname, input_t)
-
-                new = {}
-
-                count = 0
-                for j in range(0, len(output_json_arr)):
                     for i in range(0, len(newdata)):
-                        ss = populate_data(newdata[i], output_json_arr[j], itemname)
+                        arr = getTimestamps(newdata[i], itemname)
 
-                    count += 1
-                    new[count] = ss
-                    if count >= input_version:
-                        break
+                    print len(arr)
+                    output_json_arr = preprocess_json_array(arr, itemname)
 
-                print "--------------------Snapshot ------------------------"
-                print new[input_version]
+                    # print output_json_arr
 
-                with open(save_path+'/'+file_names, 'w') as fp:
-                    json.dump(new[input_version], fp)
+                    new = {}
 
-                end = time.time()
+                    count = 0
+                    # for j in output_json_arr:
+                    #     for i in range(0, len(newdata)):
+                    #         ss = populate_data(newdata[i], j, itemname)
+                    #
+                    #     count += 1
+                    #     new[count] = ss
+                    #     if count >= input_version:
+                    #         break
 
-                print file_names
-                print(end - start)
+                    for i in range(0, len(newdata)):
+                        snapshot = populate_data(newdata[i], output_json_arr[input_version], itemname)
 
-                diff = end-start
-                versions = file_names.replace(".json", "")
+                    print "--------------------Snapshot ------------------------"
+                    print snapshot
+                    # print new[input_version]
 
-                rows.append([diff, versions])
+                    with open(save_path+'/'+file_names, 'w') as fp:
+                        json.dump(snapshot, fp)
+
+                    end = time.time()
+
+                    print file_names
+                    print(end - start)
+
+                    diff = end-start
+                    versions = file_names.replace(".json", "")
+
+                    rows.append([diff, versions])
 
     with open(csv_name, 'w') as csvfile:
 

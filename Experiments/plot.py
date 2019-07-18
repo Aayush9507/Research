@@ -4,11 +4,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import csv
 
-t1 = []
-t2 = []
-t3 = []
-changes = []
-
 
 ax = plt.gca()
 df = pd.read_csv("/Users/mymac/Documents/GitHub/Research/TimeSlice_ChildChanges.csv")

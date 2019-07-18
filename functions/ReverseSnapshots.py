@@ -202,8 +202,8 @@ def remove_empty_dictionaries(myjson):
     return myjson
 
 
-path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change_folder_large'
-save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_parent_change_folder_large'
+path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_medium'
+save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder_medium'
 
 fields = ['time', 'versions']
 

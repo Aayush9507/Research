@@ -1,7 +1,7 @@
 import json
 import os.path
 import random
-path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change_folder_large'
+path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_medium'
 
 
 for file in os.listdir(path):
