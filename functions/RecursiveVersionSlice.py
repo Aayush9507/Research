@@ -1,21 +1,10 @@
+import csv
 import json
+import os
+import time
 
-with open("/Users/mymac/Documents/GitHub/Research/jsons/tjson2.json", "r") as read_file:
-    data = json.load(read_file)
 
 mydict = {}
-
-
-def checkOverlap2(json1, json2):
-
-    startA, endA = json1.split('-')
-    startB, endB = json2.split('-')
-
-    if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA == endB) or endB<endA and startB > startA:
-        return True
-    else:
-
-        return False
 
 
 def versionslice(arr, d, i):
@@ -52,66 +41,73 @@ def versionslice(arr, d, i):
     return arrr
 
 
-items = ['specimen']
-ver = 1
+if __name__ == '__main__':
 
-item = items[-1]+'Item'
-version = items[-1]+'Versions'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_parent_change_folder'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change_folder_Version_slice_small'
 
-arrr = []
-versionArray = []
-flags = {}
-flags2 = {}
+    fields = ['time', 'versions']
+    csv_name = "Versionslice_time_log_small.csv"
+    rows = []
 
-slices = versionslice(items, data, 0)
+    for file_names in sorted(os.listdir(path)):
 
+        original_timestamp = ''
+        tslice = ''
 
-# print slices
+        full_filename = "%s/%s" % (path, file_names)
+        with open(full_filename, "r") as read_file:
+            data = json.load(read_file)
 
-for dict in slices:
-    for arrays in dict[item][version]:
-        # print arrays
-        t = arrays['timestamp']
-        if t not in flags2 or flags2[t] == 'False':
+            for file in data:
+                start = time.time()
 
+                items = ['specimen']
+                ver = 1
 
-            versionArray.append(arrays)
-            flags2[t] = 'True'
+                item = items[-1]+'Item'
+                version = items[-1]+'Versions'
 
+                arrr = []
+                versionArray = []
+                flags = {}
+                flags2 = {}
 
+                slices = versionslice(items, data, 0)
 
-slicedict = {}
+                for dict in slices:
+                    for arrays in dict[item][version]:
+                        # print arrays
+                        t = arrays['timestamp']
+                        if t not in flags2 or flags2[t] == 'False':
 
+                            versionArray.append(arrays)
+                            flags2[t] = 'True'
 
-timestamp = versionArray[0]['timestamp']
-vslice = versionArray[0]
+                slicedict = {}
 
-slicedict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
+                timestamp = versionArray[0]['timestamp']
+                vslice = versionArray[-1]
 
+                slicedict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
 
-print slicedict
+                # print slicedict
 
-with open('TestVersionSlice.json', 'w') as fp:
-    json.dump(slicedict, fp)
+                with open(save_path+'/'+file_names, 'w') as fp:
+                    json.dump(mydict, fp)
 
+                end = time.time()
+                diff = end-start
+                print file_names
+                print(end - start)
+                print "----------------------------------------------------------------------------------------"
 
+                versions = file_names.replace(".json", "")
 
+                rows.append([diff, versions])
 
-#
-# for i in range(0, len(slices)):
-#     for j in slices[i][item][version]:
-#         if checkOverlap2(j['timestamp'], timestamp):
-#             tslice = j
-#             original_timestamp = j['timestamp']
-#
-#
-# mydict.update({item: {"timestamp": original_timestamp, version: [tslice]}})
-#
-#
-# print mydict
-#
-# with open('TESTtimeslice.json', 'w') as fp:
-#     json.dump(mydict, fp)
+    with open(csv_name, 'w') as csvfile:
 
-
-
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(fields)
+        csvwriter.writerows(rows)

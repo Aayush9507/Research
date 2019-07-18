@@ -190,7 +190,6 @@ if __name__ == '__main__':
     arr = ['specimen', 'name']
     t = '2015-2015'
 
-
     print versionSnapshot(arr,data,0,t)
 
     # arr = versionSnapshot(data, itemname, 0)

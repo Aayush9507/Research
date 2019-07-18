@@ -204,7 +204,6 @@ if __name__ == '__main__':
 
     newdata = give_recursive_items2(items, data, 0, t)
 
-
     for j in range(0, len(output_json_arr)):
 
         ss = versionSnapshot2(newdata, output_json_arr[j], itemname)
