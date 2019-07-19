@@ -2,60 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="530498d7-18f7-49f8-998b-3bd3251a7b24" name="Default Changelist" comment="New Json added">
-      <change afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSlice/Timeslice_time_log_large.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSlice/Timeslice_time_log_medium.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSlice/Timeslice_time_log_small.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/recursive_timesnapshot.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/recursive_timesnapshot.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timeslice_childchange_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSlice/Timeslice_childchange_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timeslice_childchange_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSlice/Timeslice_childchange_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timeslice_childchange_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSlice/Timeslice_childchange_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timeslice_time_log_large.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timeslice_time_log_medium.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timeslice_time_log_small.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timesnapshot_childchng_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot/Timesnapshot_childchng_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timesnapshot_childchng_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot/Timesnapshot_childchng_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timesnapshot_childchng_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot/Timesnapshot_childchng_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timesnapshot_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot/Timesnapshot_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timesnapshot_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot/Timesnapshot_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Timesnapshot_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot/Timesnapshot_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot_childchange_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_childchange_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot_childchange_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_childchange_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot_childchange_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_childchange_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Versionslice_childchange_time_log_large.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Versionslice_childchange_time_log_medium.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Versionslice_childchange_time_log_small.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Versionslice_time_log_large.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Versionslice_time_log_medium.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/Versionslice_time_log_small.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/reverse_child_chnge_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Document_creation/reverse_child_chnge_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/reverse_child_chnge_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Document_creation/reverse_child_chnge_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/reverse_child_chnge_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Document_creation/reverse_child_chnge_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/reverse_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Document_creation/reverse_time_log_large.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/reverse_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Document_creation/reverse_time_log_medium.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/CSV/reverse_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Document_creation/reverse_time_log_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/TimeSlice Vs Child_changes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/TimeSlice Vs ParentChanges.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/VersionSlice Vs Child_changes.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/VersionSlice Vs ParentChanges.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/100.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/100.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/200.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/200.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/300.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/300.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/400.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/400.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/500.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/500.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/600.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/600.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/700.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/700.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/800.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/800.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/900.json" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_Time_slice_large/900.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Experiments/plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plot_data/VersionSlice_ChildChanges.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Plot_data/VersionSlice_ChildChanges.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plot_data/timeSlice_parent_change.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Plot_data/timeSlice_parent_change.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plot_data/versionSlice_parent_change.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Plot_data/versionSlice_parent_change.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/Document creation Parent change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/Document creation time for Parent change.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/Document_creation_Parent_change.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/Document_Creation_Parent_Change.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/Document_creation_child_change.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/Document_Creation_Child_Change.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/TimeSlice_Child_Version_Change_Plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSlice_Child_Version_Change_Plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/TimeSlice_Parent_Version_Change_Plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSlice_Parent_Version_Change_Plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/TimeSnapshot Vs Child_changes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSnapshot_Child_Version_Change_Plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/TimeSnapshot Vs ParentChanges.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSnapshot_Parent_Version_Change_Plot.png.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/VersionSlice_Child_Version_Change_Plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/VersionSlice_Child_Version_Change_Plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/VersionSlice_Parent_Version_Change_Plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/VersionSlice_Parent_Version_Change_Plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/VersionSnapshot Vs Child_changes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/VersionSnapshot_Child_Version_Change_Plot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Experiments/plot_images/VersionSnapshot_Parent_Version_Change_Plot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/VersionSnapshot_Parent_Version_Change_Plot.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/RecursiveVersionSlice.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/RecursiveVersionSlice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/Recursive_VersionSnapshot_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Recursive_VersionSnapshot_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Recursive_Timesnapshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Recursive_TimeSnapshot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Recursive_VersionSnapshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/Recursive_VersionSnapshot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/TimeSlice.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions/TimeSlice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Timeslice_childchange_time_log_large.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Timeslice_childchange_time_log_large.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Timeslice_childchange_time_log_medium.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Timeslice_childchange_time_log_medium.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/Timeslice_childchange_time_log_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Experiments/CSV/Timeslice_childchange_time_log_small.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recursive_versionSnapshot.py" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -74,7 +42,7 @@
     <SUITE FILE_PATH="coverage/Research$reverseSnapshots2.coverage" NAME="reverseSnapshots2 Coverage Results" MODIFIED="1563409690912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$TimeSnapshot.coverage" NAME="TimeSnapshot Coverage Results" MODIFIED="1557936782505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Research$recursive_versionSnapshot_github.coverage" NAME="recursive_versionSnapshot_github Coverage Results" MODIFIED="1563389575864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
-    <SUITE FILE_PATH="coverage/Research$TimeSlice.coverage" NAME="TimeSlice Coverage Results" MODIFIED="1563475464036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
+    <SUITE FILE_PATH="coverage/Research$TimeSlice.coverage" NAME="TimeSlice Coverage Results" MODIFIED="1563495012412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$recursive_versionSnapshot.coverage" NAME="recursive_versionSnapshot Coverage Results" MODIFIED="1563402646288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$pre_process_child.coverage" NAME="pre_process_child Coverage Results" MODIFIED="1563338268250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Experiments" />
     <SUITE FILE_PATH="coverage/Thesis$jtest2.coverage" NAME="jtest2 Coverage Results" MODIFIED="1557520551385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -85,14 +53,15 @@
     <SUITE FILE_PATH="coverage/Research$versionSlice.coverage" NAME="versionSlice Coverage Results" MODIFIED="1559056709506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Research$TimeSnapshot2.coverage" NAME="TimeSnapshot2 Coverage Results" MODIFIED="1560197287829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Research$pre_process.coverage" NAME="pre_process Coverage Results" MODIFIED="1563426582677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Experiments" />
-    <SUITE FILE_PATH="coverage/Research$RecursiveVersionSlice.coverage" NAME="RecursiveVersionSlice Coverage Results" MODIFIED="1563475177555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
+    <SUITE FILE_PATH="coverage/Research$RecursiveVersionSlice.coverage" NAME="RecursiveVersionSlice Coverage Results" MODIFIED="1563494803193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$old_reverseBackup.coverage" NAME="old_reverseBackup Coverage Results" MODIFIED="1561610619280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$testRange.coverage" NAME="testRange Coverage Results" MODIFIED="1561611080867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$versionSnapshot.coverage" NAME="versionSnapshot Coverage Results" MODIFIED="1563381172622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Research$ReverseSnapshots.coverage" NAME="ReverseSnapshots Coverage Results" MODIFIED="1563426832282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
-    <SUITE FILE_PATH="coverage/Research$recursive_timesnapshot.coverage" NAME="recursive_timesnapshot Coverage Results" MODIFIED="1563409231632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
+    <SUITE FILE_PATH="coverage/Research$recursive_timesnapshot.coverage" NAME="recursive_timesnapshot Coverage Results" MODIFIED="1563493959121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
     <SUITE FILE_PATH="coverage/Thesis$TimeSnapshot.coverage" NAME="TimeSnapshot Coverage Results" MODIFIED="1557538341986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Research$Recursive_VersionSnapshot.coverage" NAME="Recursive_VersionSnapshot Coverage Results" MODIFIED="1563428535367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
+    <SUITE FILE_PATH="coverage/Research$Recursive_VersionSnapshot.coverage" NAME="Recursive_VersionSnapshot Coverage Results" MODIFIED="1563495530336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/functions" />
+    <SUITE FILE_PATH="coverage/Research$SizeVsTimePlot.coverage" NAME="SizeVsTimePlot Coverage Results" MODIFIED="1563498230056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Experiments" />
     <SUITE FILE_PATH="coverage/Research$dictTest.coverage" NAME="dictTest Coverage Results" MODIFIED="1557894951311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Research$reversing_plot.coverage" NAME="reversing_plot Coverage Results" MODIFIED="1563420049768" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Experiments" />
   </component>
@@ -144,17 +113,17 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="686" />
-          <entry key="PLAIN_TEXT" value="438" />
-          <entry key="Python" value="29339" />
+          <entry key="PLAIN_TEXT" value="477" />
+          <entry key="Python" value="30548" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="5" />
+          <entry key="Image" value="14" />
           <entry key="JSON" value="547" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="205" />
+          <entry key="PLAIN_TEXT" value="78" />
+          <entry key="Python" value="222" />
         </counts>
       </usages-collector>
     </session>
@@ -164,8 +133,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Experiments/plot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -188,8 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Experiments/child_change_folder_small/400.json" />
-        <option value="$PROJECT_DIR$/Experiments/child_change_folder_small/500.json" />
         <option value="$PROJECT_DIR$/Experiments/child_change_folder_small/600.json" />
         <option value="$PROJECT_DIR$/Experiments/child_change_folder_small/700.json" />
         <option value="$PROJECT_DIR$/Experiments/child_change_folder_small/800.json" />
@@ -219,7 +186,6 @@
         <option value="$PROJECT_DIR$/functions/timeslice.py" />
         <option value="$PROJECT_DIR$/Experiments/parent_change/reversing_plot.py" />
         <option value="$PROJECT_DIR$/Experiments/reversing_plot.py" />
-        <option value="$PROJECT_DIR$/functions/Recursive_Timesnapshot.py" />
         <option value="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_large_copy/100.json" />
         <option value="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_large_copy/200.json" />
         <option value="$PROJECT_DIR$/Experiments/parent_change/parent_change_folder_large_copy/300.json" />
@@ -234,11 +200,14 @@
         <option value="$PROJECT_DIR$/functions/ReverseSnapshots.py" />
         <option value="$PROJECT_DIR$/Experiments/reversed_JSON/reversed_parent_change_folder/100.json" />
         <option value="$PROJECT_DIR$/Experiments/reversed_JSON/reversed_parent_change_folder_medium/100.json" />
-        <option value="$PROJECT_DIR$/functions/Recursive_VersionSnapshot.py" />
         <option value="$PROJECT_DIR$/functions/Recursive_VersionSnapshot_test.py" />
+        <option value="$PROJECT_DIR$/Experiments/plot.py" />
+        <option value="$PROJECT_DIR$/functions/Recursive_Timesnapshot.py" />
+        <option value="$PROJECT_DIR$/functions/Recursive_TimeSnapshot.py" />
         <option value="$PROJECT_DIR$/functions/RecursiveVersionSlice.py" />
         <option value="$PROJECT_DIR$/functions/TimeSlice.py" />
-        <option value="$PROJECT_DIR$/Experiments/plot.py" />
+        <option value="$PROJECT_DIR$/functions/Recursive_VersionSnapshot.py" />
+        <option value="$PROJECT_DIR$/Experiments/SizeVsTimePlot.py" />
       </list>
     </option>
   </component>
@@ -287,11 +256,6 @@
               <item name="Research" type="b2602c69:ProjectViewProjectNode" />
               <item name="Research" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Research" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Research" type="462c0819:PsiDirectoryNode" />
-              <item name="Experiments" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -303,7 +267,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563477197852" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563497846186" />
     <property name="jdk.selected.JAVA_MODULE" value="1.7" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -316,18 +280,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Experiments" />
       <recent name="$PROJECT_DIR$/Experiments/CSV/VersionSlice" />
       <recent name="Versionslice_childchange_time_log_large.csv Versionslice_childchange_time_log_small.csv Versionslice_childchange_time_log_medium.csv Versionslice_time_log_large.csv Versionslice_time_log_medium.csv Versionslice_time_log_small.csv" />
       <recent name="$PROJECT_DIR$/Experiments/parent_change" />
       <recent name="$PROJECT_DIR$/functions" />
-      <recent name="$PROJECT_DIR$/Experiments" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Experiments/CSV/Document_creation" />
-      <recent name="$PROJECT_DIR$/Experiments/CSV/TimeSnapshot" />
-      <recent name="$PROJECT_DIR$/Experiments/CSV/TimeSlice" />
-      <recent name="$PROJECT_DIR$/Experiments/CSV/VersionSnapshot" />
+      <recent name="$PROJECT_DIR$/Experiments/CSV" />
       <recent name="$PROJECT_DIR$/Plot_data" />
+      <recent name="$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime" />
+      <recent name="$PROJECT_DIR$/Experiments/plot_images/SizeVsTime" />
+      <recent name="$PROJECT_DIR$/Experiments/plot_images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -342,7 +306,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.plot">
+  <component name="RunManager" selected="Python.SizeVsTimePlot">
     <configuration name="RecursiveVersionSlice" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -387,7 +351,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ReverseSnapshots" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="SizeVsTimePlot" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Research" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -395,12 +359,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/functions" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Experiments" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/functions/ReverseSnapshots.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Experiments/SizeVsTimePlot.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -458,18 +422,18 @@
       <item itemvalue="Python.recursive_timesnapshot" />
       <item itemvalue="Python.Recursive_VersionSnapshot" />
       <item itemvalue="Python.Recursive_VersionSnapshot_test" />
-      <item itemvalue="Python.ReverseSnapshots" />
       <item itemvalue="Python.RecursiveVersionSlice" />
       <item itemvalue="Python.TimeSlice" />
       <item itemvalue="Python.plot" />
+      <item itemvalue="Python.SizeVsTimePlot" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.plot" />
+        <item itemvalue="Python.SizeVsTimePlot" />
         <item itemvalue="Python.TimeSlice" />
         <item itemvalue="Python.RecursiveVersionSlice" />
+        <item itemvalue="Python.plot" />
         <item itemvalue="Python.Recursive_VersionSnapshot_test" />
-        <item itemvalue="Python.ReverseSnapshots" />
       </list>
     </recent_temporary>
   </component>
@@ -508,7 +472,7 @@
       <workItem from="1562205888766" duration="1838000" />
       <workItem from="1562620365262" duration="1383000" />
       <workItem from="1563219573310" duration="47825000" />
-      <workItem from="1563313760478" duration="59915000" />
+      <workItem from="1563313760478" duration="66393000" />
     </task>
     <task id="LOCAL-00001" summary="New Json added">
       <created>1557785714962</created>
@@ -521,12 +485,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="351204000" />
+    <option name="totallyTimeSpent" value="357682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="548" y="35" width="344" height="830" id="Project" order="0" visible="true" weight="0.32689556" />
+      <window_info active="true" content_ui="combo" x="548" y="35" width="344" height="830" id="Project" order="0" visible="true" weight="0.369814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -535,7 +500,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32589838" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.1511772" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.32094175" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3977695" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -553,7 +518,7 @@
       <window_info anchor="right" id="Database" order="5" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="SciView" order="8" weight="0.37195995" />
+      <window_info anchor="right" id="SciView" order="8" weight="0.36909872" />
       <window_info anchor="right" id="Maven Projects" order="9" weight="0.3297568" />
     </layout>
     <layout-to-restore>
@@ -613,58 +578,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jsons/recur_json.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsons/s1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsons/tjson3.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsons/versionslice.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsons/versionslice2.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/result.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsons/TESTtimeslice.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsons/result.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/testRecursion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-276" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/versionSlice.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions/versionSnapshot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1089" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Experiments/parent_change/reversing_plot.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Plot_data/reversing_time_parent_change.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Experiments/reversed_JSON/reversed_parent_change_folder_large/999.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret column="3304" selection-start-column="3304" selection-end-column="3304" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Experiments/reversing_plot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -816,20 +729,61 @@
     <entry file="file://$PROJECT_DIR$/Experiments/CSV/VersionSnapshot/VersionSnapshot_time_log_large.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/CSV/VersionSlice/Versionslice_childchange_time_log_large.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plot_data/TimeSlice_ChildChanges.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSlice_Parent_Version_Change_Plot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSlice_Child_Version_Change_Plot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/functions/Recursive_VersionSnapshot_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="275" column="25" selection-start-line="275" selection-start-column="25" selection-end-line="275" selection-end-column="25" />
+        <state relative-caret-position="145">
+          <caret line="35" column="49" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="35" selection-end-column="49" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/Recursive_Timesnapshot.py">
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSnapshot_Child_Version_Change_Plot.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/TimeSnapshot_Parent_Version_Change_Plot.png.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plot_data/Timesnapshot_Parentchange_SizeVsTime.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/RecursiveVersionSlice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1323">
-          <caret line="149" column="100" selection-start-line="149" selection-start-column="100" selection-end-line="149" selection-end-column="100" />
+        <state relative-caret-position="573">
+          <caret line="107" column="74" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/TimeSlice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="103" column="40" selection-start-line="103" selection-start-column="40" selection-end-line="103" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/Recursive_TimeSnapshot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="310" column="74" selection-start-line="310" selection-start-column="39" selection-end-line="310" selection-end-column="74" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -838,50 +792,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/functions/Recursive_VersionSnapshot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="254" lean-forward="true" selection-start-line="254" selection-end-line="254" />
+        <state relative-caret-position="1613">
+          <caret line="318" column="48" selection-start-line="250" selection-start-column="82" selection-end-line="250" selection-end-column="124" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Experiments/CSV/VersionSlice/Versionslice_childchange_time_log_large.csv">
+    <entry file="file://$PROJECT_DIR$/Plot_data/VersionSlice_ParentChange_SizeVsTime.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/TimeSlice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="85" selection-start-line="55" selection-start-column="85" selection-end-line="55" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/SizeVsTime/TimeSnapshot_ParentChange_SizeVsTime.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/RecursiveVersionSlice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/SizeVsTime/TimeSnapshot_ChildChange_SizeVsTime.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Plot_data/TimeSlice_ChildChanges.csv">
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/Document creation time for Parent change.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/Document creation Parent change.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/Document_Creation_Parent_Change.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiments/plot_images/ChangesVsTime/Document_Creation_Child_Change.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Plot_data/VersionSnapshot_ParentChange_SizeVsTime.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Experiments/TimeSlice_Parent_Version_Change_Plot.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/Experiments/SizeVsTimePlot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Experiments/TimeSlice_Child_Version_Change_Plot.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/Plot_data/VersionSnapshot_ChildChange_SizeVsTime.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recursive_versionSnapshot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2459" />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Experiments/plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>

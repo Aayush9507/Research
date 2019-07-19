@@ -247,14 +247,14 @@ def give_recursive_items2(arr, d, i):
 
 if __name__ == '__main__':
 
-    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder_large'
-    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Version_snapshots_large'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_all'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Version_snapshots_all'
 
     # with open('/Users/mymac/Documents/GitHub/Research/Experiments/reversed_parent_change_folder/100.json', "r") as read_file:
     #     data = json.load(read_file)
 
-    fields = ['time', 'versions']
-    csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/VersionSnapshot_time_log_large.csv"
+    fields = ['time', 'size']
+    csv_name = "VersionSnapshot_ParentChange_SizeVsTime.csv"
     rows = []
 
     for file_names in sorted(os.listdir(path)):
@@ -283,7 +283,7 @@ if __name__ == '__main__':
                     for i in range(0, len(newdata)):
                         arr = getTimestamps(newdata[i], itemname)
 
-                    print len(arr)
+                    # print len(arr)
                     output_json_arr = preprocess_json_array(arr, itemname)
 
                     # print output_json_arr
@@ -304,7 +304,7 @@ if __name__ == '__main__':
                         snapshot = populate_data(newdata[i], output_json_arr[input_version], itemname)
 
                     print "--------------------Snapshot ------------------------"
-                    print snapshot
+                    # print snapshot
                     # print new[input_version]
 
                     with open(save_path+'/'+file_names, 'w') as fp:
@@ -318,7 +318,7 @@ if __name__ == '__main__':
                     diff = end-start
                     versions = file_names.replace(".json", "")
 
-                    rows.append([diff, versions])
+                    rows.append([diff, os.path.getsize(full_filename)/1024])
 
     with open(csv_name, 'w') as csvfile:
 

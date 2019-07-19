@@ -49,11 +49,11 @@ def timeslice(arr, d, timestamp, i):
 
 if __name__ == '__main__':
 
-    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder_large'
-    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Time_slice_large'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_all'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Time_slice_all'
 
-    fields = ['time', 'versions']
-    csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/Timeslice_time_log_large.csv"
+    fields = ['time', 'size']
+    csv_name = "Timeslice_ParentChange_SizeVsTime.csv"
     rows = []
 
     for file_names in sorted(os.listdir(path)):
@@ -99,7 +99,7 @@ if __name__ == '__main__':
 
                     versions = file_names.replace(".json", "")
 
-                    rows.append([diff, versions])
+                    rows.append([diff, os.path.getsize(full_filename)/1024])
 
     with open(csv_name, 'w') as csvfile:
 
