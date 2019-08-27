@@ -2,7 +2,7 @@ import csv
 import json
 import os
 import time
-import simplejson
+
 
 def getTimestamps(json, itemname):
 
@@ -75,7 +75,7 @@ def preprocess_json_array(arr, itemname):
     endArr = []
 
     for j in range(0, len(res_list)):
-        if str(res_list[j]['timestamp'])!='':
+        if str(res_list[j]['timestamp']) != '':
             start, end = str(res_list[j]['timestamp']).split("-")
 
             startArr.append(start)
@@ -97,11 +97,9 @@ def preprocess_json_array(arr, itemname):
             newArr.append(str(smallest_start) + '-' + str(smallest_end))
             smallest_start = int(smallest_end) + 1
 
-    # print "new arr", newArr
     json_array = []
 
     for t in range(0, len(newArr)):
-        # print newArr[t], input_t
 
             final_json = {}
             final_json.update({"data": {itemname: {}}})
@@ -144,7 +142,7 @@ def utility(dict):
         for d in range(0, len(arr)):
             for k, v in arr[d].iteritems():
 
-                if k!='timestamp':
+                if k != 'timestamp':
                     return v
 
 
@@ -215,7 +213,7 @@ def populate_data(parent, json1, itemname):
     return json1
 
 
-def give_recursive_items2(arr, d, i):
+def give_recursive_items(arr, d, i):
 
     item = arr[i]
     for key, value in d.iteritems():
@@ -237,11 +235,10 @@ def give_recursive_items2(arr, d, i):
 
                                 dict1 = {key: value}
                                 arrr.append(dict1)
-                                # print "here...", dict1
 
                             else:
 
-                                give_recursive_items2(arr, value[version][versions]['data'][item], i+1)
+                                give_recursive_items(arr, value[version][versions]['data'][item], i + 1)
     return arrr
 
 
@@ -278,7 +275,7 @@ if __name__ == '__main__':
 
                     arrr = []
 
-                    newdata = give_recursive_items2(items, data, 0)
+                    newdata = give_recursive_items(items, data, 0)
 
                     for i in range(0, len(newdata)):
                         arr = getTimestamps(newdata[i], itemname)
@@ -289,8 +286,6 @@ if __name__ == '__main__':
                     # print output_json_arr
 
                     new = {}
-
-                    count = 0
                     # for j in output_json_arr:
                     #     for i in range(0, len(newdata)):
                     #         ss = populate_data(newdata[i], j, itemname)

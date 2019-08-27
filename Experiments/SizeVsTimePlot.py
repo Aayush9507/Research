@@ -6,7 +6,7 @@ import csv
 
 
 ax = plt.gca()
-df = pd.read_csv("/Users/mymac/Documents/GitHub/Research/Plot_data/VersionSnapshot_ParentChange_SizeVsTime.csv")
+df = pd.read_csv("/Users/mymac/Documents/GitHub/Research/Plot_data/Timeslice_ParentChange_SizeVsTime.csv")
 
 
 df.plot(kind='line', x='size', y='time', ax=ax)
@@ -18,6 +18,6 @@ plt.ylabel("Time (Seconds) ")
 plt.xlabel("Size (Kbs)")
 
 plt.grid()
-plt.savefig('VersionSnapshot_ParentChange_SizeVsTime')
-plt.title('Version Snapshot Parent Change Size Vs Time')
+# plt.savefig('/Users/mymac/Documents/GitHub/Research/Experiments/plot_images/SizeVsTime/TimeSnapshot_ParentChange_SizeVsTime')
+# plt.title('Time Snapshot Parent Change Size Vs Time')
 plt.show()

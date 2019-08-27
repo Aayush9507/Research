@@ -43,11 +43,11 @@ def versionslice(arr, d, i):
 
 if __name__ == '__main__':
 
-    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_child_change_all'
-    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/child_change/child_change_folder_Version_slice_all'
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Version_slice'
 
-    fields = ['time', 'size']
-    csv_name = "VersionSlice_ChildChange_SizeVsTime.csv"
+    fields = ['time', 'changes']
+    csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/VersionSlice/Versionslice_time_log_small.csv"
     rows = []
 
     for file_names in sorted(os.listdir(path)):
@@ -64,7 +64,7 @@ if __name__ == '__main__':
                     start = time.time()
 
                     items = ['specimen']
-                    ver = 1
+                    ver = 99
 
                     item = items[-1]+'Item'
                     version = items[-1]+'Versions'
@@ -78,7 +78,6 @@ if __name__ == '__main__':
 
                     for dict in slices:
                         for arrays in dict[item][version]:
-                            # print arrays
                             t = arrays['timestamp']
                             if t not in flags2 or flags2[t] == 'False':
 
@@ -88,7 +87,7 @@ if __name__ == '__main__':
                     slicedict = {}
 
                     timestamp = versionArray[0]['timestamp']
-                    vslice = versionArray[-1]
+                    vslice = versionArray[ver]
 
                     slicedict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
 
@@ -105,7 +104,7 @@ if __name__ == '__main__':
 
                     versions = file_names.replace(".json", "")
 
-                    rows.append([diff, os.path.getsize(full_filename)/1024])
+                    rows.append([diff, versions])
 
     with open(csv_name, 'w') as csvfile:
 
