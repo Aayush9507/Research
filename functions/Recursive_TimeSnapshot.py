@@ -120,7 +120,7 @@ class TimeSnapshot:
         startA, endA = json1.split('-')
         startB, endB = json2.split('-')
 
-        if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA==endB) or endB<endA and startB>startA:
+        if (startA == startB) or (startB < startA <= endB) or (startB > startA and endA == endB) or endB < endA and startB > startA:
             return True
         else:
 
@@ -154,7 +154,7 @@ class TimeSnapshot:
 
                         for k, v in versions.iteritems():
 
-                                if k == 'timestamp' and t!='' and v!='' and self.check_overlap2(t, unicode(v)):
+                                if k == 'timestamp' and t != '' and v != '' and self.check_overlap2(t, unicode(v)):
 
                                     if i+1 == len(arr):
 

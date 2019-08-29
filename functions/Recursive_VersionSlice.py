@@ -4,51 +4,55 @@ import os
 import time
 
 
-mydict = {}
+class VersionSlice:
 
+    def __init__(self):
+        pass
 
-def versionslice(arr, d, i):
+    def versionslice(self, arr, d, i):
 
-    item = arr[i]
-    for key, value in d.iteritems():
+        item = arr[i]
+        for key, value in d.iteritems():
 
-        if "Item" in key:
+            if "Item" in key:
 
-            name = key.replace('Item', '')
-            version = name + "Versions"
+                name = key.replace('Item', '')
+                version = name + "Versions"
 
-            if name == item:
+                if name == item:
 
-                for versions in value[version]:
+                    for versions in value[version]:
 
-                    for k, v in versions.iteritems():
+                        for k, v in versions.iteritems():
 
-                        if k == 'timestamp':
+                            if k == 'timestamp':
 
-                            if i+1 == len(arr):
+                                if i+1 == len(arr):
 
-                                t = value['timestamp']
+                                    t = value['timestamp']
 
-                                if t not in flags or flags[t] == 'False':
+                                    if t not in flags or flags[t] == 'False':
 
-                                    dict1 = {key: value}
-                                    arrr.append(dict1)
-                                    flags[t] = 'True'
+                                        dict1 = {key: value}
+                                        output_array.append(dict1)
+                                        flags[t] = 'True'
 
-                            else:
+                                else:
 
-                                versionslice(arr, versions['data'][item], i+1)
-    return arrr
+                                    self.versionslice(arr, versions['data'][item], i+1)
+        return output_array
 
 
 if __name__ == '__main__':
 
+    obj = VersionSlice()
     path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_JSON/reversed_parent_change_folder'
     save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/parent_change/parent_change_folder_Version_slice'
 
     fields = ['time', 'changes']
     csv_name = "/Users/mymac/Documents/GitHub/Research/Experiments/CSV/VersionSlice/Versionslice_time_log_small.csv"
     rows = []
+    mydict = {}
 
     for file_names in sorted(os.listdir(path)):
 
@@ -64,34 +68,34 @@ if __name__ == '__main__':
                     start = time.time()
 
                     items = ['specimen']
+
+                    # Specify version number here
                     ver = 99
 
                     item = items[-1]+'Item'
                     version = items[-1]+'Versions'
 
-                    arrr = []
+                    output_array = []
                     versionArray = []
                     flags = {}
                     flags2 = {}
 
-                    slices = versionslice(items, data, 0)
+                    slices = obj.versionslice(items, data, 0)
 
-                    for dict in slices:
-                        for arrays in dict[item][version]:
+                    for dicts in slices:
+                        for arrays in dicts[item][version]:
                             t = arrays['timestamp']
                             if t not in flags2 or flags2[t] == 'False':
 
                                 versionArray.append(arrays)
                                 flags2[t] = 'True'
 
-                    slicedict = {}
+                    slice_dict = {}
 
                     timestamp = versionArray[0]['timestamp']
-                    vslice = versionArray[ver]
+                    version_slice = versionArray[ver]
 
-                    slicedict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [vslice]}})
-
-                    # print slicedict
+                    slice_dict.update({"specimenItem": {"timestamp": timestamp, "specimenVersions": [version_slice]}})
 
                     with open(save_path+'/'+file_names, 'w') as fp:
                         json.dump(mydict, fp)
@@ -106,8 +110,8 @@ if __name__ == '__main__':
 
                     rows.append([diff, versions])
 
-    with open(csv_name, 'w') as csvfile:
+    with open(csv_name, 'w') as csv_file:
 
-        csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(fields)
-        csvwriter.writerows(rows)
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow(fields)
+        csv_writer.writerows(rows)

@@ -5,251 +5,207 @@ import os
 import time
 
 
-def checkOverlap(json1, json2):
+class ReverseSnapshots:
 
-    startA, endA = json1.split('-')
-    startB, endB = json2.split('-')
+    def __init__(self):
+        pass
 
-    if (startA == startB) or (startB < startA <= endB) or (startB>startA and endA==endB):
-        return True
-    else:
-        return False
+    def check_overlap(self, json1, json2):
 
+        startA, endA = json1.split('-')
+        startB, endB = json2.split('-')
 
-def get_keylist(array):
-    # Determine numbers of versions
-
-    keyarray = []
-    keydict = {}
-
-    for i in array:
-        # keyarray.append(i['data']['specimen'].keys())
-
-        keydict[tuple(i['data']['specimen'].keys())] = True
-
-    # print "keydict", keydict
-
-    # print "here,,,", len(keyarray), keyarray
-    #
-    # i = 0
-    #
-    # while i < len(keyarray)-1:
-    #     j = i+1
-    #     if keyarray[i] == keyarray[j]:
-    #         keyarray.remove(keyarray[i])
-    #
-    #     i += 1
-
-    # for i in range(0, len(keyarray) - 1):
-    #     for j in range(i + 1, len(keyarray)):
-    #         if keyarray[i] == keyarray[j]:
-    #             keyarray.remove(keyarray[i])
-    # print "helo...", keyarray
-
-    for k, v in keydict.iteritems():
-        keyarray.append(list(k))
-    return keyarray
-
-
-def create_skeleton(keylist):
-
-    pjson = {}
-    pjson.update({"specimenItem": {"timestamp": " ", "specimenVersions": []}})
-
-    for i in range(0, len(keylist)):
-        pjson['specimenItem']['specimenVersions'].append({})
-
-    arr=[]
-    for j in keylist:
-
-        vdict = {}
-        vdict.update({"timestamp":"", 'data': {'specimen': {}}})
-        for k in j:
-            itemname = k+'Item'
-            num = 0
-            while num < len(keylist):
-
-                vdict["data"]["specimen"].update({itemname: ''})
-                num = num+1
-
-        arr.append(vdict)
-
-    pjson['specimenItem']['specimenVersions'] = arr
-
-    return pjson
-
-
-def getTimestamps(data):
-    """Iterating through the snapshots json to retrieve timestamps. If the keys are different then add timestamp
-     to time array else add to merge array. Merge array timestamps will be later reduced to one timestamp as the
-    keys didn't change this merged timestamp will be the timestamp for new version."""
-
-    timearray=[]
-    mergearray = []
-
-    # key1 = data[0]['data']['specimen'].keys()
-    # key1 = ['colloquial', 'name', 'surname', 'dummy']
-    # print "1st key", key1
-
-    # timearray.append(data[0]['timestamp'])
-
-    for k in range(-1, len(data)-1):
-
-        if collections.Counter(data[k]['data']['specimen'].keys()) == collections.Counter(data[k+1]['data']['specimen'].keys()):
-
-            # print "is equal", collections.Counter(data[k]['data']['specimen'].keys()), collections.Counter(data[k+1]['data']['specimen'].keys())
-
-            # print data[k]['timestamp']
-            # key1 = collections.Counter(data[k]['data']['specimen'].keys())
-            if not mergearray.__contains__(data[k]['timestamp']):
-                mergearray.append(data[k]['timestamp'])
-                mergearray.append(data[k+1]['timestamp'])
+        if (startA == startB) or (startB < startA <= endB) or (startB > startA and endA == endB):
+            return True
         else:
-            # print " Not equal", collections.Counter(data[k]['data']['specimen'].keys()), collections.Counter(data[k+1]['data']['specimen'].keys())
-            timearray.append(data[k]['timestamp'])
-        # key1 = collections.Counter(data[k]['data']['specimen'].keys())
+            return False
 
-    small = []
-    large = []
+    def get_keylist(self, array):
+        # Determine numbers of versions
 
-    # print "here...", mergearray, timearray
+        keyarray = []
+        keydict = {}
 
-    if mergearray!=[]:
-        for i in range(0, len(mergearray)):
+        for i in array:
 
-            minimum, maximum = mergearray[i].split('-')
-            small.append(int(minimum))
-            large.append(int(maximum))
+            keydict[tuple(i['data']['specimen'].keys())] = True
 
-        t = str(min(small))+'-'+str(max(large))
-        timearray.append(t)
+        for k, v in keydict.iteritems():
+            keyarray.append(list(k))
+        return keyarray
 
-    return timearray
+    def create_skeleton(self, keylist):
 
+        pjson = {}
+        pjson.update({"specimenItem": {"timestamp": " ", "specimenVersions": []}})
 
-def populate_data(myjson):
+        for i in range(0, len(keylist)):
+            pjson['specimenItem']['specimenVersions'].append({})
 
-    arr = myjson['specimenItem']['specimenVersions']
+        arr = []
+        for j in keylist:
 
-    for i in range(0, len(timearr)):
+            vdict = {}
+            vdict.update({"timestamp": "", 'data': {'specimen': {}}})
+            for k in j:
+                itemname = k+'Item'
+                num = 0
+                while num < len(keylist):
+
+                    vdict["data"]["specimen"].update({itemname: ''})
+                    num = num+1
+
+            arr.append(vdict)
+
+        pjson['specimenItem']['specimenVersions'] = arr
+
+        return pjson
+
+    def get_timestamps(self, data):
+        """Iterating through the snapshots json to retrieve timestamps. If the keys are different then add timestamp
+         to time array else add to merge array. Merge array timestamps will be later reduced to one timestamp as the
+        keys didn't change this merged timestamp will be the timestamp for new version."""
+
+        timearray=[]
+        mergearray = []
+
+        for k in range(-1, len(data)-1):
+
+            if collections.Counter(data[k]['data']['specimen'].keys()) == collections.Counter(data[k+1]['data']['specimen'].keys()):
+
+                if not mergearray.__contains__(data[k]['timestamp']):
+                    mergearray.append(data[k]['timestamp'])
+                    mergearray.append(data[k+1]['timestamp'])
+            else:
+                timearray.append(data[k]['timestamp'])
+
+        small = []
+        large = []
+
+        if mergearray:
+            for i in range(0, len(mergearray)):
+
+                minimum, maximum = mergearray[i].split('-')
+                small.append(int(minimum))
+                large.append(int(maximum))
+
+            t = str(min(small))+'-'+str(max(large))
+            timearray.append(t)
+
+        return timearray
+
+    def populate_data(self, myjson):
+
+        arr = myjson['specimenItem']['specimenVersions']
+
+        for i in range(0, len(timearr)):
+            for j in range(0, len(arr)):
+
+                arr[i]['timestamp'] = timearr[i]
+
+        for i in range(0, len(myjson['specimenItem']['specimenVersions'])):
+
+            for k, v in arr[i]['data']['specimen'].iteritems():
+
+                version = str(k).replace('Item', 'Versions')
+
+                arr[i]['data']['specimen'][k] = {'timestamp': '', version: []}
+
         for j in range(0, len(arr)):
 
-            arr[i]['timestamp'] = timearr[i]
+            for time in range(0, len(data)):
 
-    for i in range(0, len(myjson['specimenItem']['specimenVersions'])):
+                if self.check_overlap(data[time]['timestamp'], arr[j]['timestamp']):
 
-        for k, v in arr[i]['data']['specimen'].iteritems():
+                    for key, val in arr[j]['data']['specimen'].iteritems():
 
-            version = str(k).replace('Item', 'Versions')
+                        for k, v in data[time]['data']['specimen'].iteritems():
 
-            arr[i]['data']['specimen'][k] = {'timestamp': '', version: []}
+                            if k+'Item' == key:
 
-    # print "arr == ", arr, len(data)
+                                mydict = {}
 
-    for j in range(0, len(arr)):
+                                t = data[time]['timestamp']
 
-        for time in range(0, len(data)):
+                                mydict.update({'timestamp': t, 'data': {k: v}})
+                                ver = k+'Versions'
 
-            # print "data--1", data[time]['data']
-            # print "data--2", arr[j]['data']
-            # print data[time]['timestamp'], arr[j]['timestamp']
-            # print "-----------------------------------------------------"
+                                arr[j]['data']['specimen'][key][ver].append(mydict)
 
-            if checkOverlap(data[time]['timestamp'], arr[j]['timestamp']):
+        return myjson
 
-                for key, val in arr[j]['data']['specimen'].iteritems():
+    def fix_timestamps(self, myjson):
+        ar = myjson['specimenItem']['specimenVersions']
+        for i in range(0, len(ar)):
+            t = ar[i]['timestamp']
+            for k, v in ar[i]['data']['specimen'].iteritems():
 
-                    for k, v in data[time]['data']['specimen'].iteritems():
+                v['timestamp'] = t
+        small = []
+        big = []
+        for t in range(0, len(ar)):
 
-                        # print "key==", k+'Item', key
+            mini, maxi = ar[t]['timestamp'].split('-')
+            small.append(int(mini))
+            big.append(int(maxi))
 
-                        if k+'Item' == key:
+        t = str(min(small))+'-'+str(max(big))
+        myjson['specimenItem']['timestamp'] = t
 
-                            mydict = {}
-
-                            t = data[time]['timestamp']
-
-                            mydict.update({'timestamp': t, 'data': {k: v}})
-                            # print mydict, t
-                            ver = k+'Versions'
-
-                            arr[j]['data']['specimen'][key][ver].append(mydict)
-
-                            # print "here......", arr[j]['data']['specimen'][key][ver]
-
-    return myjson
+        return myjson
 
 
-def fix_timestamps(myjson):
-    ar = myjson['specimenItem']['specimenVersions']
-    for i in range(0, len(ar)):
-        t = ar[i]['timestamp']
-        for k, v in ar[i]['data']['specimen'].iteritems():
+if __name__ == '__main__':
 
-            v['timestamp'] = t
-    small = []
-    big = []
-    for t in range(0, len(ar)):
+    obj = ReverseSnapshots()
+    path = '/Users/mymac/Documents/GitHub/Research/Experiments/child_change_folder_medium'
+    save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_child_change_folder_medium'
 
-        mini, maxi = ar[t]['timestamp'].split('-')
-        small.append(int(mini))
-        big.append(int(maxi))
+    fields = ['time', 'versions']
 
-    t = str(min(small))+'-'+str(max(big))
-    myjson['specimenItem']['timestamp'] = t
+    csv_name = "reverse_child_chnge_time_log_medium.csv"
 
-    return myjson
+    rows = []
 
+    for file in sorted(os.listdir(path)):
 
-path = '/Users/mymac/Documents/GitHub/Research/Experiments/child_change_folder_medium'
-save_path = '/Users/mymac/Documents/GitHub/Research/Experiments/reversed_child_change_folder_medium'
+        full_filename = "%s/%s" % (path, file)
 
-fields = ['time', 'versions']
+        with open(full_filename, "r") as read_file:
 
-csv_name = "reverse_child_chnge_time_log_medium.csv"
+            start = time.time()
 
-rows = []
-# with open('/Users/mymac/Documents/GitHub/Research/Experiments/child_change_folder_large/100.json', "r") as read_file:
-#     data = json.load(read_file)
-for file in sorted(os.listdir(path)):
+            data = json.load(read_file)
 
-    full_filename = "%s/%s" % (path, file)
+            timearr = obj.get_timestamps(data)
 
-    with open(full_filename, "r") as read_file:
+            keylist = obj.get_keylist(data)
 
-        start = time.time()
+            myjson = obj.create_skeleton(keylist)
 
-        data = json.load(read_file)
+            myjson = obj.populate_data(myjson)
 
-        timearr = getTimestamps(data)
+            myjson = obj.fix_timestamps(myjson)
 
-        keylist = get_keylist(data)
+            with open(save_path+'/'+file, 'w') as fp:
 
-        myjson = create_skeleton(keylist)
+                json.dump(myjson, fp)
 
-        myjson = populate_data(myjson)
+            end = time.time()
 
-        myjson = fix_timestamps(myjson)
+            diff = end-start
 
-        with open(save_path+'/'+file, 'w') as fp:
+            versions = file.replace(".json", "")
 
-            json.dump(myjson, fp)
+            rows.append([diff, versions])
 
-        end = time.time()
+            print diff, versions, full_filename
 
-        diff = end-start
+    with open(csv_name, 'w') as csvfile:
 
-        versions = file.replace(".json", "")
-
-        rows.append([diff, versions])
-
-        print diff, versions, full_filename
-
-with open(csv_name, 'w') as csvfile:
-
-    csvwriter = csv.writer(csvfile)
-    csvwriter.writerow(fields)
-    csvwriter.writerows(rows)
+        csvwriter = csv.writer(csvfile)
+        csvwriter.writerow(fields)
+        csvwriter.writerows(rows)
 
 
 
